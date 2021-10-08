@@ -9,18 +9,20 @@ border:2px solid black;
 const styledDiv = styled.div`
 border:2px solid black;
 background-color:black;
+align-content:center;
 
 `;
-const styledNameH2= styled.h2`
+const styledName = styled.h2`
 font-size:24px;
 color:white;
-background-color:black;
+// background-color:black;
 font-family:fantasy
 `;
 const styledInfo = styled.p`
-color: black;
-font-size:20px;
+color: white;
+font-size:24px;
 font-family:fantasy
+display:none;
 `;
 
 function Character(props)
@@ -28,14 +30,16 @@ function Character(props)
  const {character} = props;
  
 return(
-    <stlyedContainer classname='character'>
+    <stlyedContainer className="center">
         
         {character.map((item) =>{
 
            return( 
             <styledDiv> 
-             <styledName>Name:{item.name}</styledName>
-             <styledInfo >  
+              <div className="name-birth">
+             <styledName>{item.name},{item.birth_year}</styledName>
+             </div>
+             <styledInfo classname=" info-under" >  
               <p>gender:{item.gender}</p>              
              <p>Height:{item.height}</p>
              <p>Mass:{item.mass}</p>
